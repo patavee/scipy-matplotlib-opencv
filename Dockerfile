@@ -52,12 +52,12 @@ RUN cd /tmp && \
     mkdir opencv-3.1.0/build && \
     cd opencv-3.1.0/build && \
     cmake \
-        -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_BUILD_TYPE=RELEASE \
     -D BUILD_opencv_python2=YES \
     -D BUILD_JPEG=YES \
     -D WITH_WEBP=YES \
-        -D WITH_OPENEXR=YES \ 
-        -D BUILD_TESTS=NO \
+    -D WITH_OPENEXR=YES \ 
+    -D BUILD_TESTS=NO \
     -D BUILD_PERF_TESTS=NO \
     .. && \
     make -j 4 VERBOSE=1 && \
