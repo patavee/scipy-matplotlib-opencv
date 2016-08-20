@@ -9,18 +9,18 @@ RUN apt-get update && apt-get install -y \
     unzip \
     cmake \
     pkg-config \
-	clang \
+    clang \
     zlib1g-dev \
-	libjpeg-dev \
+    libjpeg-dev \
     libwebp-dev \
     libpng-dev \
-	libtiff5-dev \
-	libjasper-dev \
+    libtiff5-dev \
+    libjasper-dev \
     libopenexr-dev \
     libgdal-dev \
     libdc1394-22-dev \
-	libavcodec-dev \
-	libavformat-dev \
+    libavcodec-dev \
+    libavformat-dev \
     libswscale-dev \
     libtheora-dev \
     libvorbis-dev \
@@ -29,14 +29,14 @@ RUN apt-get update && apt-get install -y \
     yasm \
     libopencore-amrnb-dev \
     libopencore-amrwb-dev \
-	libunicap2-dev \
-	libv4l-0 \
-	libv4l-dev \
+    libunicap2-dev \
+    libv4l-0 \
+    libv4l-dev \
     libxine2-dev \
-	v4l-utils \
+    v4l-utils \
     libeigen3-dev \
     libtbb-dev \
-	&& \
+    && \
     rm -rf /var/lib/apt/lists/*
 
 # define compilers
@@ -53,13 +53,13 @@ RUN cd /tmp && \
     cd opencv-3.1.0/build && \
     cmake \
         -D CMAKE_BUILD_TYPE=RELEASE \
-	-D BUILD_opencv_python2=YES \
-	-D BUILD_JPEG=YES \
-	-D WITH_WEBP=YES \
+    -D BUILD_opencv_python2=YES \
+    -D BUILD_JPEG=YES \
+    -D WITH_WEBP=YES \
         -D WITH_OPENEXR=YES \ 
         -D BUILD_TESTS=NO \
-	-D BUILD_PERF_TESTS=NO \
-	.. && \
+    -D BUILD_PERF_TESTS=NO \
+    .. && \
     make -j 4 VERBOSE=1 && \
     make && \
     make install
